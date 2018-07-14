@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<ADAddress>
+<!-- LDAP Address for Roche Bay Area -->
+	<Address>
+		<OU1>WindowsClients</OU1>
+		<OU2>ClientsSmart</OU2>
+		<OU3>IT</OU3>
+		<OU4>Pleasanton</OU4>
+		<OU5>Sunnyvale</OU5>
+		<OU6>LosGatos</OU6>
+		<OU7>SantaClara</OU7>
+		<OU8>AdminUnits</OU8>
+		<DC1>nala</DC1>
+		<DC2>roche</DC2>
+		<DC3>com</DC3>
+	</Address>
+</ADAddress>

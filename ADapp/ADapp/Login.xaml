@@ -1,0 +1,18 @@
+﻿<Window x:Class="ADapp.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ADapp"
+        mc:Ignorable="d"
+        Title="Login to AD" Height="210.606" Width="300">
+    <Grid>
+        <Label Content="Userid:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="26,102,0,0" Height="28" RenderTransformOrigin="2.227,2.662"/>
+        <TextBox x:Name="Userid" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="SX account..." VerticalAlignment="Top" Width="120" Margin="77,106,0,0" TextChanged="Userid_TextChanged"/>
+        <Label Content="Password:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,135,0,0" RenderTransformOrigin="-0.742,0.374"/>
+        <Label Content="Roche AD for IT" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
+        <Button x:Name="LoginButton" Content="Login" HorizontalAlignment="Left" VerticalAlignment="Top" Width="45" Margin="207,141,0,0" Click="LoginButton_Click"/>
+        <PasswordBox x:Name="Password" HorizontalAlignment="Left" Margin="77,141,0,0" VerticalAlignment="Top" Width="120"/>
+
+    </Grid>
+</Window>
