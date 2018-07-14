@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ADapp"
         Title="Roche AD for IT" Height="397.727" Width="610.227" UseLayoutRounding="True">
     <Grid>
-        <TabControl TabStripPlacement="Left">
+        <TabControl TabStripPlacement="Left" Grid.Row="1">
             <TabControl.Resources>
                 <Style TargetType="{x:Type TabItem}">
                     <Setter Property="HeaderTemplate">
@@ -23,15 +23,22 @@
                     <Setter Property="Padding" Value="3" />
                 </Style>
             </TabControl.Resources>
-            <TabItem Header="Computer"/>
-            <TabItem Header="User" />
+            <TabItem Header="Computer">
+                <Canvas>
+                    <Label Content="AD Computer name:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="36,10,0,0"/>
+                    <TextBox x:Name="ADCsearch" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="search..." VerticalAlignment="Top" Width="120" Margin="159,12,0,0"/>
+                    <Button x:Name="ADCsearch_b" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="286,13,0,0"/>
+                    <Label Content="OS:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="36,41,0,0"/>
+                    <TextBlock x:Name="OS" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Operating System" VerticalAlignment="Top" Margin="69,46,0,0"/>
+                    <Label Content="Managed By:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="36,67,0,0"/>
+                </Canvas>
+            </TabItem>
+            <TabItem Header="User">
+                <Canvas>
+                    
+                </Canvas>
+            </TabItem>
         </TabControl>
-        <Label Content="AD Computer name:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="36,10,0,0"/>
-        <TextBox x:Name="ADCsearch" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="search..." VerticalAlignment="Top" Width="120" Margin="159,12,0,0"/>
-        <Button x:Name="ADCsearch_b" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="286,13,0,0"/>
-        <Label Content="OS:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="36,41,0,0"/>
-        <TextBlock x:Name="OS" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Operating System" VerticalAlignment="Top" Margin="69,46,0,0"/>
-        <Label Content="Managed By:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="36,67,0,0"/>
-        <TextBlock x:Name="ManagedBy" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Managed by..." VerticalAlignment="Top" Margin="120,72,0,0"/>
+        
     </Grid>
 </Window>

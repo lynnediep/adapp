@@ -13,19 +13,6 @@ namespace ADapp
     /// </summary>
     public partial class App : Application
     {
-        public string userid;
-        public string password;
-        private string distinguishedName;
-        
-        public App(string a, string b)
-        {
-            userid = a;
-            password = b;
-        }
 
-        private void createConnection()
-        {
-
-        }
     }
 }

@@ -11,8 +11,7 @@
         <TextBox x:Name="Userid" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="SX account..." VerticalAlignment="Top" Width="120" Margin="77,106,0,0" TextChanged="Userid_TextChanged"/>
         <Label Content="Password:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,135,0,0" RenderTransformOrigin="-0.742,0.374"/>
         <Label Content="Roche AD for IT" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
-        <Button x:Name="LoginButton" Content="Login" HorizontalAlignment="Left" VerticalAlignment="Top" Width="45" Margin="207,141,0,0" Click="LoginButton_Click"/>
         <PasswordBox x:Name="Password" HorizontalAlignment="Left" Margin="77,141,0,0" VerticalAlignment="Top" Width="120"/>
-
+        <Button x:Name="LoginButton" Content="Login" HorizontalAlignment="Left" VerticalAlignment="Top" Width="45" Margin="207,141,0,0" Click="LoginButton_Click"/>
     </Grid>
 </Window>

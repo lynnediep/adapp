@@ -20,8 +20,15 @@ namespace ADapp
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        private string userid;
+        private string password;
+        public MainWindow(string u, string p)
         {
+            InitializeComponent();
+            userid = u;
+            password = p;
+            createConnection();
+            this.Visibility = Visibility.Visible;
         }
     }
 }

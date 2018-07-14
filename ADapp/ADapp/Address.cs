@@ -18,7 +18,7 @@ namespace ADapp
     }
 
     [XmlRootAttribute("ADAddress")]
-    public class ADList
+    public class ADAddress
     {
         [XmlElement("Address")]
         public Address[] clientList { get; set; }
