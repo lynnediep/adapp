@@ -35,19 +35,26 @@ namespace ADapp
             this.Visibility = Visibility.Visible;
         }
 
-        private void searchComputer()
-        {
-            computerName = ADCsearch.Text;
-            using (DirectoryEntry entry = new DirectoryEntry("LDAP://CN=" + computerName + domainList.domains[domainID],
-                                                         userid, password, AuthenticationTypes.Secure))
-            {
-                OS.Text = entry.Properties["OperatingSystem"].Value.ToString();
-            }
-        }
-
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             domainID = Domain_Combo.SelectedIndex;
+        }
+
+        private void ADCsearch_b_Click(object sender, RoutedEventArgs e)
+        {
+            computerName = ADCsearch.Text;
+            try
+            {
+                using (DirectoryEntry entry = new DirectoryEntry("LDAP://CN=" + computerName + domainList.domains[domainID].DNcomputer,
+                                                             userid, password, AuthenticationTypes.Secure))
+                {
+                    OS.Text = entry.Properties["OperatingSystem"].Value.ToString() + " " + entry.Properties["OperatingSystemVersion"].Value.ToString();
+                    ManagedBy.Text = entry.Properties["ManagedBy"].Value.ToString();
+                }
+            } catch(Exception ex)
+            {
+                System.Windows.MessageBox.Show("An exception was thrown because:\n" + ex.Message);
+            }
         }
     }
 }
