@@ -56,5 +56,10 @@ namespace ADapp
                 System.Windows.MessageBox.Show("An exception was thrown because:\n" + ex.Message);
             }
         }
+
+        private void ADCsearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

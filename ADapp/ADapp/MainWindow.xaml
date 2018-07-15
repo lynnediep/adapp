@@ -26,13 +26,13 @@
             <TabItem Header="Computer">
                 <Canvas>
                     <Label Content="AD Computer name:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="36,10,0,0"/>
-                    <TextBox x:Name="ADCsearch" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="search..." VerticalAlignment="Top" Width="120" Margin="159,12,0,0"/>
+                    <TextBox x:Name="ADCsearch" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="159,12,0,0" TextChanged="ADCsearch_TextChanged"/>
                     <Button x:Name="ADCsearch_b" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="286,13,0,0" Click="ADCsearch_b_Click"/>
                     <Label Content="OS:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="36,41,0,0"/>
                     <TextBlock x:Name="OS" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Operating System" VerticalAlignment="Top" Margin="69,46,0,0"/>
                     <Label Content="Managed By:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="36,67,0,0"/>
-                    <TextBox x:Name="ManagedBy" Height="23" TextWrapping="Wrap" Text="Manager" Width="120" Canvas.Left="120" Canvas.Top="70"/>
-                    <Button Content="Change" Width="75" Canvas.Left="245" Canvas.Top="72"/>
+                    <TextBox x:Name="ManagedBy" Height="50" TextWrapping="Wrap" Width="120" Canvas.Left="120" Canvas.Top="70"/>
+                    <Button Content="Change" Width="75" Canvas.Left="245" Canvas.Top="100"/>
                     <ComboBox x:Name="Domain_Combo" Width="120" Canvas.Left="391" Canvas.Top="11" SelectionChanged="ComboBox_SelectionChanged">
                         <ComboBoxItem x:Name="Pleasanton" Content="Pleasanton" HorizontalAlignment="Left" Width="118"/>
                         <ComboBoxItem x:Name="Santa_Clara" Content="Santa Clara" HorizontalAlignment="Left" Width="118"/>
@@ -45,10 +45,10 @@
             </TabItem>
             <TabItem Header="User">
                 <Canvas>
-                    
+
                 </Canvas>
             </TabItem>
         </TabControl>
-        
+
     </Grid>
 </Window>
