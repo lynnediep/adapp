@@ -31,11 +31,13 @@ namespace ADapp
             InitializeComponent();
             userid = u;
             password = p;
+            domainList = a;
             this.Visibility = Visibility.Visible;
         }
 
         private void searchComputer()
         {
+            computerName = ADCsearch.Text;
             using (DirectoryEntry entry = new DirectoryEntry("LDAP://CN=" + computerName + domainList.domains[domainID],
                                                          userid, password, AuthenticationTypes.Secure))
             {
