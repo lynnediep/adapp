@@ -31,6 +31,16 @@
                     <Label Content="OS:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="36,41,0,0"/>
                     <TextBlock x:Name="OS" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Operating System" VerticalAlignment="Top" Margin="69,46,0,0"/>
                     <Label Content="Managed By:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="36,67,0,0"/>
+                    <TextBox Height="23" TextWrapping="Wrap" Text="Manager" Width="120" Canvas.Left="120" Canvas.Top="70"/>
+                    <Button Content="Change" Width="75" Canvas.Left="245" Canvas.Top="72"/>
+                    <ComboBox x:Name="Domain_Combo" Width="120" Canvas.Left="391" Canvas.Top="11" SelectionChanged="ComboBox_SelectionChanged">
+                        <ComboBoxItem x:Name="Pleasanton" Content="Pleasanton" HorizontalAlignment="Left" Width="118"/>
+                        <ComboBoxItem x:Name="Santa_Clara" Content="Santa Clara" HorizontalAlignment="Left" Width="118"/>
+                        <ComboBoxItem x:Name="Los_Gatos" Content="Los Gatos" HorizontalAlignment="Left" Width="118"/>
+                        <ComboBoxItem x:Name="San_Jose" Content="San Jose" HorizontalAlignment="Left" Width="118"/>
+                        <ComboBoxItem x:Name="Sunnyvale" Content="Sunnyvale" HorizontalAlignment="Left" Width="118"/>
+                        <ComboBoxItem x:Name="Redwood_City" Content="Redwood City" HorizontalAlignment="Left" Width="118"/>
+                    </ComboBox>
                 </Canvas>
             </TabItem>
             <TabItem Header="User">

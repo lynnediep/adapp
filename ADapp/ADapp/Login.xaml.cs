@@ -47,7 +47,7 @@ namespace ADapp
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainProg = new MainWindow(Userid.Text, Password.Password.ToString());
+            MainWindow mainProg = new MainWindow(Userid.Text, Password.Password.ToString(), adAddr);
             this.Visibility = Visibility.Hidden;
         }
 
