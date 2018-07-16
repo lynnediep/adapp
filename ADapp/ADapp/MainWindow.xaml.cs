@@ -23,6 +23,7 @@ namespace ADapp
     {
         private string userid;
         private string password;
+        private string username;
         private string computerName;
         private ADAddress domainList;
         private int domainID;
@@ -60,6 +61,26 @@ namespace ADapp
         private void ADCsearch_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+        }
+
+        private void Usersearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Usersearch_b_Click(object sender, RoutedEventArgs e)
+        {
+            username = Usersearch.Text;
+            try {
+                using (DirectoryEntry entry = new DirectoryEntry("LDAP://CN=" + username + domainList.domains[domainID].DNuser, userid, password, AuthenticationTypes.Secure))
+                {
+                    //do something with user
+                    displayname.Text = entry.Properties["DisplayName"].Value.ToString();
+                }
+            } catch(Exception ex)
+            {
+                System.Windows.MessageBox.Show("An exception was thrown because:\n" + ex.Message);
+            }
         }
     }
 }

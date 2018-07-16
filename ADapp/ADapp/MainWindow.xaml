@@ -45,7 +45,11 @@
             </TabItem>
             <TabItem Header="User">
                 <Canvas>
-
+					<Label Content="Username:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="36,10,0,0"/>
+					<TextBox x:Name="Usersearch" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="159,12,0,0" TextChanged="Usersearch_TextChanged"/>
+					<Button x:Name="Usersearch_b" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="286,13,0,0" Click="Usersearch_b_Click"/>
+					<Label Content="Display Name:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="36,41,0,0"/>
+					<TextBlock x:Name="displayname" HorizontalAlignment="Left" TextWrapping="Wrap"  VerticalAlignment="Top" Margin="69,46,0,0"/>
                 </Canvas>
             </TabItem>
         </TabControl>
