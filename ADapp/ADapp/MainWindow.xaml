@@ -33,7 +33,7 @@
                     <Label Content="Managed By:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="36,67,0,0"/>
                     <TextBox x:Name="ManagedBy" Height="50" TextWrapping="Wrap" Width="289" Canvas.Left="120" Canvas.Top="70"/>
                     <Button Content="Change" Width="75" Canvas.Left="414" Canvas.Top="100"/>
-                    <ComboBox x:Name="Domain_Combo" Width="120" Canvas.Left="391" Canvas.Top="11" SelectionChanged="ComboBox_SelectionChanged">
+                    <ComboBox x:Name="Domain_Combo" Width="120" Canvas.Left="391" Canvas.Top="11" SelectionChanged="ComboBox_SelectionChanged" SelectedIndex="0">
                         <ComboBoxItem x:Name="Pleasanton" Content="Pleasanton" HorizontalAlignment="Left" Width="118"/>
                         <ComboBoxItem x:Name="Santa_Clara" Content="Santa Clara" HorizontalAlignment="Left" Width="118"/>
                         <ComboBoxItem x:Name="Los_Gatos" Content="Los Gatos" HorizontalAlignment="Left" Width="118"/>
