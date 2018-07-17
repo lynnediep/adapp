@@ -51,6 +51,7 @@ namespace ADapp
                 {
                     OS.Text = entry.Properties["OperatingSystem"].Value.ToString() + " " + entry.Properties["OperatingSystemVersion"].Value.ToString();
                     ManagedBy.Text = entry.Properties["ManagedBy"].Value.ToString();
+                    entry.Close();
                 }
             } catch(Exception ex)
             {
@@ -78,6 +79,122 @@ namespace ADapp
                     displayname.Text = entry.Properties["DisplayName"].Value.ToString();
                 }
             } catch(Exception ex)
+            {
+                System.Windows.MessageBox.Show("An exception was thrown because:\n" + ex.Message);
+            }
+        }
+
+        //RESET USER PW
+        private void Resetpw_b_Click(object sender, RoutedEventArgs e)
+        {
+            username = Usersearch.Text;
+            try
+            {
+                using (DirectoryEntry entry = new DirectoryEntry("LDAP://CN=" + username + domainList.domains[domainID].DNuser, userid, password, AuthenticationTypes.Secure))
+                {
+                    //do something with user
+                    entry.Invoke("SetPassword", new object[] { "Welcome1" });
+                    entry.Properties["LockOutTime"].Value = 0;
+                    entry.CommitChanges();
+
+                    System.Windows.MessageBox.Show("Password has been reset");
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show("An exception was thrown because:\n" + ex.Message);
+            }
+        }
+
+        //UNLOCK ACC
+        private void Unlockacc_b_Click(object sender, RoutedEventArgs e)
+        {
+            username = Usersearch.Text;
+            try
+            {
+                using (DirectoryEntry entry = new DirectoryEntry("LDAP://CN=" + username + domainList.domains[domainID].DNuser, userid, password, AuthenticationTypes.Secure))
+                {
+                    //do something with user
+                    entry.Properties["LockOutTime"].Value = 0;
+                    entry.CommitChanges();
+
+                    System.Windows.MessageBox.Show("Account unlocked");
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show("An exception was thrown because:\n" + ex.Message);
+            }
+        }
+
+        //CHANGE DESCRIP
+        private void Changedescrip_b_Click(object sender, RoutedEventArgs e)
+        {
+            computerName = ADCsearch.Text;
+            try
+            {
+                using (DirectoryEntry entry = new DirectoryEntry("LDAP://CN=" + computerName + domainList.domains[domainID].DNcomputer,
+                                                             userid, password, AuthenticationTypes.Secure))
+                {
+                    string descrip = Description.Text;
+                    entry.InvokeSet("description", descrip);   //Uncomment and modify this line if you want to play around
+                    entry.CommitChanges();
+
+                    System.Windows.MessageBox.Show("Successfully changed description");
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show("An exception was thrown because:\n" + ex.Message);
+            }
+        }
+
+        //ASSIGN ADM
+        private void Assign_b_Click(object sender, RoutedEventArgs e)
+        {
+            computerName = ADCsearch.Text;
+            try
+            {
+                using(DirectoryEntry entry = new DirectoryEntry("LDAP://CN=" + computerName + domainList.domains[domainID].DNcomputer,
+                                                             userid, password, AuthenticationTypes.Secure))
+                {
+                    string useradm = useradm_assign.Text;
+                    DirectoryEntry entry2 = new DirectoryEntry("LDAP://CN=" + useradm + domainList.domains[domainID].DNuser, userid, password, AuthenticationTypes.Secure);
+
+                    entry.Properties["managedby"].Clear();
+                    entry.Properties["managedby"].Add(entry2.Properties["distinguishedname"].Value);
+                    //System.Windows.MessageBox.Show("An exception was thrown because:\n" + entry);
+                    entry.CommitChanges();
+                    entry.Close();
+
+                    System.Windows.MessageBox.Show("Added " + useradm + " as admin for " + computerName);
+                }
+            }
+            catch (System.DirectoryServices.DirectoryServicesCOMException ex)
+            {
+                System.Windows.MessageBox.Show("An exception was thrown because:\n" + ex.Message);
+            }
+        }
+
+        //REMOVE ADM
+        private void Remove_b_Click(object sender, RoutedEventArgs e)
+        {
+            computerName = ADCsearch.Text;
+            try
+            {
+                using (DirectoryEntry entry = new DirectoryEntry("LDAP://CN=" + computerName + domainList.domains[domainID].DNcomputer,
+                                                             userid, password, AuthenticationTypes.Secure))
+                {
+                    string useradm = useradm_remove.Text;
+                    DirectoryEntry entry2 = new DirectoryEntry("LDAP://CN=" + useradm + domainList.domains[domainID].DNuser, userid, password, AuthenticationTypes.Secure);
+
+                    entry.Properties["managedby"].Remove(entry2.Properties["distinguishedname"].Value);
+                    entry.CommitChanges();
+
+                    System.Windows.MessageBox.Show("Removed " + useradm + " as admin for " + computerName);
+                }
+            }
+            catch (Exception ex)
             {
                 System.Windows.MessageBox.Show("An exception was thrown because:\n" + ex.Message);
             }
