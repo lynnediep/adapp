@@ -89,19 +89,7 @@
                         </TextBlock.Style>
                     </TextBlock>
 
-                    <TextBlock HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="User:" VerticalAlignment="Top" Width="34" Canvas.Left="145" Canvas.Top="277">
-                        <TextBlock.Style>
-                            <Style TargetType="{x:Type TextBlock}">
-                                <Setter Property="Visibility" Value="Hidden"/>
-                                <Style.Triggers>
-                                    <DataTrigger Binding="{Binding ElementName=removeadm, Path=IsChecked}" Value="True">
-                                        <Setter Property="Visibility" Value="Visible"/>
-                                    </DataTrigger>
-                                </Style.Triggers>
-                            </Style>
-                        </TextBlock.Style>
-                    </TextBlock>
-
+ 
                     <TextBox x:Name="useradm_assign" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" VerticalAlignment="Top" Width="114" Canvas.Left="179" Canvas.Top="277">
                         <TextBox.Style>
                             <Style TargetType="{x:Type TextBox}">
@@ -115,18 +103,7 @@
                         </TextBox.Style>
                     </TextBox>
 
-                    <TextBox x:Name="useradm_remove" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" VerticalAlignment="Top" Width="114" Canvas.Left="179" Canvas.Top="277">
-                        <TextBox.Style>
-                            <Style TargetType="{x:Type TextBox}">
-                                <Setter Property="Visibility" Value="Hidden"/>
-                                <Style.Triggers>
-                                    <DataTrigger Binding="{Binding ElementName=removeadm, Path=IsChecked}" Value="True">
-                                        <Setter Property="Visibility" Value="Visible"/>
-                                    </DataTrigger>
-                                </Style.Triggers>
-                            </Style>
-                        </TextBox.Style>
-                    </TextBox>
+
 
 
 

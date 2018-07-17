@@ -185,13 +185,11 @@ namespace ADapp
                 using (DirectoryEntry entry = new DirectoryEntry("LDAP://CN=" + computerName + domainList.domains[domainID].DNcomputer,
                                                              userid, password, AuthenticationTypes.Secure))
                 {
-                    string useradm = useradm_remove.Text;
-                    DirectoryEntry entry2 = new DirectoryEntry("LDAP://CN=" + useradm + domainList.domains[domainID].DNuser, userid, password, AuthenticationTypes.Secure);
 
-                    entry.Properties["managedby"].Remove(entry2.Properties["distinguishedname"].Value);
+                    entry.Properties["managedby"].Clear();
                     entry.CommitChanges();
 
-                    System.Windows.MessageBox.Show("Removed " + useradm + " as admin for " + computerName);
+                    System.Windows.MessageBox.Show("Removed admin for " + computerName);
                 }
             }
             catch (Exception ex)
