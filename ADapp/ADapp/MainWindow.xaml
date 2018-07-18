@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ADapp"
-        Title="Roche AD for IT" Height="397.727" Width="610.227" UseLayoutRounding="True">
+        Title="AD for IT" Height="397.727" Width="610.227" UseLayoutRounding="True">
     <Grid>
         <TabControl TabStripPlacement="Left" Grid.Row="1">
             <TabControl.Resources>
